@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Mis Tareas</title>
+
+    <link rel="stylesheet" href="{{ url_for('static',filename='main.css') }}">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootswatch@4.5.2/dist/minty/bootstrap.min.css" integrity="sha384-H4X+4tKc7b8s4GoMrylmy2ssQYpDHoqzPa9aKXbDwPoPUA3Ra8PA5dGzijN+ePnH" crossorigin="anonymous">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Chivo+Mono:wght@200&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/fontawesome.min.css"
+          integrity="sha384-jLKHWM3JRmfMU0A5x5AkjWkw/EYfGUAGagvnfryNV3F9VqM98XiIH7VBGVoxVSc7" crossorigin="anonymous">
+
+</head>
+<body>
+<nav class="navbar navbar-dark bg-primary">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="/">
+      <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" class="bi bi-journal" viewBox="0 0 16 16">
+    <path d="M3 0h10a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2v-1h1v1a1 1 0 0 0 1 1h10a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H3a1 1 0 0 0-1 1v1H1V2a2 2 0 0 1 2-2z"/>
+    <path d="M1 5v-.5a.5.5 0 0 1 1 0V5h.5a.5.5 0 0 1 0 1h-2a.5.5 0 0 1 0-1H1zm0 3v-.5a.5.5 0 0 1 1 0V8h.5a.5.5 0 0 1 0 1h-2a.5.5 0 0 1 0-1H1zm0 3v-.5a.5.5 0 0 1 1 0v.5h.5a.5.5 0 0 1 0 1h-2a.5.5 0 0 1 0-1H1z"/>
+      </svg>
+      Gestor de Tareas
+    </a>
+  </div>
+</nav>
+    <h1 class="display-4 text-center mt-4 titulo"> Editar Tarea </h1>
+
+<div class="col-md-7 offset-md-2 my-auto">
+    <form action="/update/{{tarea.id}}" method="post" class="row">
+
+        <div class="form-group p-2  bg-light col-md-5 mr-sm-2">
+            <input type="text" name="contenido_tarea" placeholder="Editar Tarea" value="{{tarea.1}}" class="form-control" autofocus>
+        </div>
+        <div class="form-group p-2  bg-light col-sm-2 mr-sm-2">
+            <input type="text" name="contenido_categoria" placeholder="Editar Categoria" value="{{tarea.2}}" class="form-control" autofocus>
+        </div>
+        <div class="form-group p-2  bg-light col-sm-2 mr-sm-2">
+            <input id="date" type="date" name="fecha_limite" value="{{tarea.3}}" class="form-control" autofocus>
+        </div>
+        <button type="submit" class="btn btn-outline-primary btn-sm col-md-2">
+            Guardar
+        </button>
+    </form>
+</div>
+</body>
+</html>
